@@ -1,0 +1,165 @@
+/* =========================================================
+   DALLAS DETAIL CO. — 10x "look & feel" enhancement layer
+   Loaded AFTER styles.css. Pure additive polish.
+   ========================================================= */
+
+/* ---------- smoother base + custom scrollbar ---------- */
+html { scroll-behavior: smooth; }
+* { scrollbar-width: thin; scrollbar-color: var(--accent) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--accent), var(--accent-2));
+  border-radius: 99px; border: 2px solid var(--bg);
+}
+::selection { background: rgba(77,163,255,.32); color: #fff; }
+
+/* ---------- scroll progress bar ---------- */
+.scroll-prog {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  z-index: 200; transform-origin: left;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  box-shadow: 0 0 16px rgba(77,163,255,.7);
+}
+
+/* ---------- cursor spotlight (desktop, fine pointer) ---------- */
+.cursor-glow {
+  position: fixed; top: 0; left: 0; width: 480px; height: 480px; border-radius: 50%;
+  pointer-events: none; z-index: 1; transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(77,163,255,.14), rgba(77,163,255,0) 62%);
+  mix-blend-mode: screen; opacity: 0; transition: opacity .4s; will-change: transform;
+}
+@media (hover: hover) and (pointer: fine) { .cursor-glow { opacity: 1; } }
+header, main, footer { position: relative; z-index: 2; }
+
+/* ---------- animated aurora atmosphere ---------- */
+.aurora { position: fixed; inset: -20%; z-index: 0; pointer-events: none; overflow: hidden; filter: blur(60px); opacity: .9; }
+.aurora span { position: absolute; display: block; border-radius: 50%; mix-blend-mode: screen; will-change: transform; }
+.aurora .a1 { width: 46vw; height: 46vw; left: 56%; top: -12%; background: radial-gradient(circle, rgba(77,163,255,.55), transparent 65%); animation: drift1 22s ease-in-out infinite; }
+.aurora .a2 { width: 40vw; height: 40vw; left: -10%; top: 40%; background: radial-gradient(circle, rgba(46,124,246,.4), transparent 65%); animation: drift2 28s ease-in-out infinite; }
+.aurora .a3 { width: 32vw; height: 32vw; left: 30%; top: 70%; background: radial-gradient(circle, rgba(203,167,90,.22), transparent 65%); animation: drift3 32s ease-in-out infinite; }
+@keyframes drift1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-8vw,10vh) scale(1.15);} }
+@keyframes drift2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(10vw,-6vh) scale(1.1);} }
+@keyframes drift3 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(6vw,-10vh) scale(1.2);} }
+@media (prefers-reduced-motion: reduce){ .aurora span { animation: none; } }
+
+/* ---------- chrome shimmer sweep on metallic headlines ---------- */
+.metallic {
+  background: linear-gradient(110deg, #8c98a6 0%, #cfd8e2 28%, #ffffff 46%, #ffffff 52%, #cfd8e2 70%, #8c98a6 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: chrome 7s ease-in-out infinite;
+}
+@keyframes chrome { 0%{ background-position: 130% 0;} 50%{ background-position: -30% 0;} 100%{ background-position: 130% 0;} }
+@media (prefers-reduced-motion: reduce){ .metallic { animation: none; } }
+
+/* ---------- buttons: sheen sweep + living glow ---------- */
+.btn { position: relative; overflow: hidden; }
+.btn::after {
+  content: ""; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent);
+  transform: skewX(-18deg); transition: left .6s var(--ease); pointer-events: none;
+}
+.btn:hover::after { left: 130%; }
+.btn-primary { animation: pulseGlow 3.2s ease-in-out infinite; }
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 12px 30px -10px rgba(77,163,255,.55); }
+  50%     { box-shadow: 0 16px 40px -8px rgba(77,163,255,.85); }
+}
+.nav-cta .btn-primary { animation: none; }
+
+/* ---------- infinite marquee trust strip ---------- */
+.strip.enhanced { overflow: hidden; }
+.strip.enhanced .strip-inner {
+  max-width: none; padding: 0; width: max-content; flex-wrap: nowrap;
+  justify-content: flex-start; gap: 46px; animation: marquee 28s linear infinite;
+}
+.strip.enhanced:hover .strip-inner { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+
+/* ---------- 3D tilt + glare on cards ---------- */
+.tilt { transform-style: preserve-3d; transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s; will-change: transform; }
+.tilt .glare {
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0;
+  background: radial-gradient(220px circle at var(--gx,50%) var(--gy,0%), rgba(255,255,255,.18), transparent 60%);
+  transition: opacity .25s; z-index: 3;
+}
+.tilt:hover .glare { opacity: 1; }
+.svc, .plan, .gallery a, .rev { position: relative; }
+
+/* ---------- featured plan: rotating gradient border ---------- */
+.plan.feature { z-index: 1; }
+.plan.feature::after {
+  content: ""; position: absolute; inset: -1.5px; border-radius: inherit; z-index: -1; padding: 1.5px;
+  background: conic-gradient(from var(--ang,0deg), var(--accent), var(--gold), var(--accent-2), var(--accent));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: spinBorder 6s linear infinite;
+}
+@property --ang { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes spinBorder { to { --ang: 360deg; } }
+
+/* ---------- hero before/after: glossy frame + floating rating badge ---------- */
+.ba { box-shadow: 0 40px 90px -30px rgba(0,0,0,.85), 0 0 0 1px rgba(77,163,255,.18); }
+.ba::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 4;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18), inset 0 0 60px rgba(0,0,0,.35);
+}
+.float-badge {
+  position: absolute; right: -14px; top: 26px; z-index: 6;
+  background: rgba(14,19,26,.72); backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid var(--line-2); border-radius: 16px; padding: 12px 16px;
+  box-shadow: var(--shadow); animation: floaty 4.5s ease-in-out infinite;
+}
+.float-badge .stars { font-size: .82rem; }
+.float-badge b { font-family: "Bricolage Grotesque"; font-size: 1.15rem; }
+.float-badge small { display: block; color: var(--muted); font-size: .72rem; }
+@keyframes floaty { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-9px);} }
+@media (max-width: 760px){ .float-badge { right: 10px; top: 12px; } }
+
+/* ---------- richer reveal: blur-to-sharp + slight scale ---------- */
+.reveal { filter: blur(8px); transform: translateY(30px) scale(.985); transition: opacity .8s var(--ease), transform .8s var(--ease), filter .8s var(--ease); }
+.reveal.in { filter: blur(0); transform: none; }
+@media (prefers-reduced-motion: reduce){ .reveal { filter: none; transform: none; } }
+
+/* ---------- section index numbers ---------- */
+.sec-no {
+  display: block; font-family: "Bricolage Grotesque"; font-weight: 800;
+  font-size: .8rem; letter-spacing: .25em; color: var(--gold); opacity: .55; margin-bottom: 10px;
+}
+
+/* ---------- giant ghost wordmark behind footer ---------- */
+.footer { position: relative; overflow: hidden; }
+.ghost-word {
+  position: absolute; left: 50%; bottom: -3.2vw; transform: translateX(-50%);
+  font-family: "Bricolage Grotesque"; font-weight: 800; white-space: nowrap;
+  font-size: 17vw; line-height: 1; letter-spacing: -.03em; pointer-events: none; z-index: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.footer .wrap { position: relative; z-index: 1; }
+
+/* ---------- service icon shimmer + nicer hover lift ---------- */
+.svc:hover .svc-ico { box-shadow: 0 0 0 4px rgba(77,163,255,.12); transform: translateY(-2px); }
+.svc-ico { transition: box-shadow .3s, transform .3s; }
+
+/* ---------- gallery: subtle zoom + gradient veil + label ---------- */
+.gallery a::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(180deg, transparent 55%, rgba(8,10,14,.55));
+  opacity: .8; transition: opacity .4s;
+}
+.gallery a:hover::after { opacity: 1; }
+
+/* ---------- nav: animated brand mark glow ---------- */
+.brand .mark { transition: box-shadow .3s, transform .3s; }
+.brand:hover .mark { box-shadow: 0 0 0 5px rgba(77,163,255,.16), inset 0 1px 0 rgba(255,255,255,.4); transform: rotate(-6deg); }
+
+/* ---------- CTA card: animated conic glow ring ---------- */
+.cta-card { position: relative; }
+.cta-card::after {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; z-index: 0; padding: 1px;
+  background: conic-gradient(from var(--ang,0deg), transparent, rgba(77,163,255,.6), transparent 40%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; animation: spinBorder 8s linear infinite;
+}
