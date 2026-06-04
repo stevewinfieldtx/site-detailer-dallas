@@ -1,0 +1,12 @@
+{
+  "name": "nyn-detailer-sites",
+  "version": "1.0.0",
+  "description": "Metro detailer spec sites — Dallas Detail Co. (first build).",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
