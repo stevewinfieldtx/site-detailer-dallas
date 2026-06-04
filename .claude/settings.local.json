@@ -28,7 +28,8 @@
       "Bash(env)",
       "Bash(cd \"C:\\\\Users\\\\SteveWinfiel_12vs805\\\\Documents\\\\.claude\\\\skills\\\\nano-banana\" && echo \"---DIR---\" && ls -R 2>/dev/null | head -50 && echo \"---KIE KEY?---\" && grep -i \"kie\" \"C:\\\\Users\\\\SteveWinfiel_12vs805\\\\Documents\\\\NYN-Websites-Detailers\\\\.env\" 2>/dev/null || echo \"no_kie_key_in_project_env\")",
       "Read(//c/Users/SteveWinfiel_12vs805/Documents/.claude/skills/**)",
-      "PowerShell(& \"C:\\\\Users\\\\SteveWinfiel_12vs805\\\\Documents\\\\NYN-Websites-Detailers\\\\dallas-detail-co\\\\generate-runware.ps1\")"
+      "PowerShell(& \"C:\\\\Users\\\\SteveWinfiel_12vs805\\\\Documents\\\\NYN-Websites-Detailers\\\\dallas-detail-co\\\\generate-runware.ps1\")",
+      "Bash(git push *)"
     ]
   }
 }
