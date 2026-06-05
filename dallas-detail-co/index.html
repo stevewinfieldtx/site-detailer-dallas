@@ -399,6 +399,72 @@
         <a class="btn btn-ghost btn-lg" href="mailto:book@dallasdetailco.com?subject=Detailing%20Quote%20Request">Request a Quote</a>
       </div>
     </div>
+
+    <style>
+    .contact-card{max-width:640px;margin:28px auto 0;background:linear-gradient(180deg,var(--surface),var(--bg-2));border:1px solid var(--line-2);border-radius:20px;padding:34px 30px;text-align:left;position:relative;z-index:1}
+    .contact-card h3{font-size:1.45rem;margin-bottom:6px}
+    .contact-card>p{color:var(--muted);margin-bottom:20px;font-size:.96rem}
+    .lead-form{display:grid;gap:14px}
+    .lf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .lead-form input,.lead-form select,.lead-form textarea{width:100%;font:inherit;color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--line-2);border-radius:12px;padding:13px 14px;transition:border-color .2s,background .2s}
+    .lead-form input::placeholder,.lead-form textarea::placeholder{color:var(--muted-2)}
+    .lead-form select{appearance:none;-webkit-appearance:none;cursor:pointer}
+    .lead-form option{background:var(--surface);color:var(--ink)}
+    .lead-form input:focus,.lead-form select:focus,.lead-form textarea:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,.06)}
+    .lead-form textarea{resize:vertical;min-height:84px}
+    .lead-form .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+    .lead-form button{width:100%;margin-top:4px}
+    .lf-status{font-size:.92rem;margin-top:4px;min-height:1.2em}
+    .lf-status.ok{color:var(--good)}.lf-status.err{color:var(--accent)}
+    @media(max-width:560px){.lf-row{grid-template-columns:1fr}}
+    </style>
+
+    <div class="contact-card reveal" data-delay="1">
+      <h3>Request your quote</h3>
+      <p>Tell us about your car and we'll get right back to you — usually same day.</p>
+      <form class="lead-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="subject" value="New quote request — Dallas Detail Co." />
+        <input type="hidden" name="from_name" value="Dallas Detail Co. Website" />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="lf-row">
+          <input type="text" name="name" placeholder="Full name" required />
+          <input type="tel" name="phone" placeholder="Phone number" required />
+        </div>
+        <input type="text" name="vehicle" placeholder="Vehicle — year / make / model" required />
+        <select name="service" required>
+          <option value="" disabled selected>Service you're interested in…</option>
+          <option>Full Detail</option>
+          <option>Ceramic Coating</option>
+          <option>Paint Correction</option>
+          <option>Paint Protection Film (PPF)</option>
+          <option>Interior Detail</option>
+          <option>Mobile Detailing</option>
+          <option>Not sure / other</option>
+        </select>
+        <textarea name="message" placeholder="Anything else? (optional)"></textarea>
+        <button class="btn btn-primary btn-lg" type="submit">Send Request</button>
+        <p class="lf-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <script>
+    (function(){
+      var f=document.querySelector('.lead-form'); if(!f) return;
+      var s=f.querySelector('.lf-status');
+      f.addEventListener('submit',function(e){
+        e.preventDefault();
+        if((f.access_key.value||'').indexOf('YOUR_')===0){ s.className='lf-status err'; s.textContent='Form not live yet — add your Web3Forms access key.'; return; }
+        var btn=f.querySelector('button'), orig=btn.textContent;
+        btn.disabled=true; btn.textContent='Sending…'; s.className='lf-status'; s.textContent='';
+        fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+          .then(function(r){return r.json();})
+          .then(function(d){ if(d.success){ s.className='lf-status ok'; s.textContent='Thanks! We got your request and will reach out shortly.'; f.reset(); } else { s.className='lf-status err'; s.textContent=d.message||'Something went wrong — please call us.'; } })
+          .catch(function(){ s.className='lf-status err'; s.textContent='Network error — please call us at the number above.'; })
+          .finally(function(){ btn.disabled=false; btn.textContent=orig; });
+      });
+    })();
+    </script>
   </div>
 </section>
 
