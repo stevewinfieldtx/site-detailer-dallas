@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact &amp; Book | Dallas Detail Co. — Dallas Auto Detailing</title>
+<meta name="description" content="Book your detail, ceramic coating, paint correction, or PPF with Dallas Detail Co. Call (469) 555-0117 or request a quote online. Serving Dallas–Fort Worth, Mon–Sat." />
+<meta name="theme-color" content="#0A0C10" />
+<link rel="canonical" href="https://dallasdetailco.com/contact.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="enhance.css" />
+<link rel="stylesheet" href="pages.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Dallas Detail Co. home"><span class="mark">◆</span><span>Dallas Detail Co.<small>Dallas · Fort Worth</small></span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="ceramic-coating.html">Ceramic Coating</a>
+      <a href="paint-correction.html">Paint Correction</a>
+      <a href="paint-protection-film.html">PPF</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+14695550117"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>(469) 555-0117</a>
+      <a class="btn btn-primary" href="#book">Book Online</a>
+    </div>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="book">
+<section class="subhero">
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span>Contact</nav>
+    <h1 class="metallic">Book your detail</h1>
+    <p class="lead">Tell us about your car and we'll get right back to you — usually the same day — with an exact quote and the next available appointment. Same-week slots across Dallas.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="contact-grid">
+    <div class="contact-form-wrap">
+      <style>
+      .contact-card{background:linear-gradient(180deg,var(--surface),var(--bg-2));border:1px solid var(--line-2);border-radius:20px;padding:34px 30px;position:relative;z-index:1}
+      .contact-card h3{font-size:1.45rem;margin-bottom:6px}
+      .contact-card>p{color:var(--muted);margin-bottom:20px;font-size:.96rem}
+      .lead-form{display:grid;gap:14px}
+      .lf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+      .lead-form input,.lead-form select,.lead-form textarea{width:100%;font:inherit;color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--line-2);border-radius:12px;padding:13px 14px;transition:border-color .2s,background .2s}
+      .lead-form input::placeholder,.lead-form textarea::placeholder{color:var(--muted-2)}
+      .lead-form select{appearance:none;-webkit-appearance:none;cursor:pointer}
+      .lead-form option{background:var(--surface);color:var(--ink)}
+      .lead-form input:focus,.lead-form select:focus,.lead-form textarea:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,.06)}
+      .lead-form textarea{resize:vertical;min-height:96px}
+      .lead-form .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+      .lead-form button{width:100%;margin-top:4px}
+      .lf-status{font-size:.92rem;margin-top:4px;min-height:1.2em}
+      .lf-status.ok{color:var(--good)}.lf-status.err{color:var(--accent)}
+      @media(max-width:560px){.lf-row{grid-template-columns:1fr}}
+      </style>
+      <div class="contact-card">
+        <h3>Request your quote</h3>
+        <p>One short form — we'll text or email you back fast.</p>
+        <form class="lead-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="subject" value="New quote request — Dallas Detail Co." />
+          <input type="hidden" name="from_name" value="Dallas Detail Co. Website" />
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="lf-row">
+            <input type="text" name="name" placeholder="Full name" required />
+            <input type="tel" name="phone" placeholder="Phone number" required />
+          </div>
+          <input type="text" name="vehicle" placeholder="Vehicle — year / make / model" required />
+          <select name="service" required>
+            <option value="" disabled selected>Service you're interested in…</option>
+            <option>Full Detail</option>
+            <option>Ceramic Coating</option>
+            <option>Paint Correction</option>
+            <option>Paint Protection Film (PPF)</option>
+            <option>Interior Detail</option>
+            <option>Mobile Detailing</option>
+            <option>Not sure / other</option>
+          </select>
+          <textarea name="message" placeholder="Anything else? (optional)"></textarea>
+          <button class="btn btn-primary btn-lg" type="submit">Send Request</button>
+          <p class="lf-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="contact-info">
+      <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><div><b>Call or text</b><a href="tel:+14695550117">(469) 555-0117</a></div></div>
+      <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg><div><b>Email</b><a href="mailto:book@dallasdetailco.com">book@dallasdetailco.com</a></div></div>
+      <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Studio</b><span>0000 Commerce St, Dallas, TX 75201</span></div></div>
+      <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Hours</b><span>Mon–Sat · 8am – 6pm · Closed Sunday</span></div></div>
+      <div class="map-embed">Map — Deep Ellum / Downtown Dallas</div>
+      <p style="color:var(--muted);font-size:.92rem;margin-top:18px">Serving Dallas, Uptown, Highland Park, University Park, Plano, Frisco, McKinney, Richardson, Addison, Carrollton, Irving, Garland, Arlington &amp; more.</p>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html"><span class="mark">◆</span><span>Dallas Detail Co.</span></a>
+        <p>Showroom-grade auto detailing, ceramic coating, paint correction &amp; PPF for the Dallas–Fort Worth metroplex.</p>
+        <div class="stars">★★★★★ <span style="color:var(--muted);font-size:.85rem">4.9 · 327 reviews</span></div>
+      </div>
+      <div><h5>Services</h5><ul>
+        <li><a href="ceramic-coating.html">Ceramic Coating</a></li>
+        <li><a href="paint-correction.html">Paint Correction</a></li>
+        <li><a href="paint-protection-film.html">Paint Protection Film</a></li>
+        <li><a href="index.html#services">Auto Detailing</a></li>
+      </ul></div>
+      <div><h5>Company</h5><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#work">Our Work</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div><h5>Visit / Contact</h5><p class="foot-nap"><b>Dallas Detail Co.</b><br />0000 Commerce St, Dallas, TX 75201<br /><a href="tel:+14695550117">(469) 555-0117</a><br /><a href="mailto:book@dallasdetailco.com">book@dallasdetailco.com</a><br />Mon–Sat · 8am – 6pm</p></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="year">2026</span> Dallas Detail Co. All rights reserved.</span><span>Dallas, TX · <a href="#">Privacy</a> · <a href="#">Terms</a></span></div>
+  </div>
+</footer>
+
+<div class="mobile-bar"><a class="btn btn-ghost" href="tel:+14695550117">Call</a><a class="btn btn-primary" href="#book">Book Online</a></div>
+<elevenlabs-convai agent-id="agent_0601kt8q7cyremya8rdt952efnhb"></elevenlabs-convai>
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<script src="script.js"></script>
+<script src="enhance.js"></script>
+<script>
+(function(){
+  var f=document.querySelector('.lead-form'); if(!f) return;
+  var s=f.querySelector('.lf-status');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if((f.access_key.value||'').indexOf('YOUR_')===0){ s.className='lf-status err'; s.textContent='Form not live yet — add your Web3Forms access key.'; return; }
+    var btn=f.querySelector('button'), orig=btn.textContent;
+    btn.disabled=true; btn.textContent='Sending…'; s.className='lf-status'; s.textContent='';
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+      .then(function(r){return r.json();})
+      .then(function(d){ if(d.success){ s.className='lf-status ok'; s.textContent='Thanks! We got your request and will reach out shortly.'; f.reset(); } else { s.className='lf-status err'; s.textContent=d.message||'Something went wrong — please call us.'; } })
+      .catch(function(){ s.className='lf-status err'; s.textContent='Network error — please call us at the number above.'; })
+      .finally(function(){ btn.disabled=false; btn.textContent=orig; });
+  });
+})();
+</script>
+</body>
+</html>

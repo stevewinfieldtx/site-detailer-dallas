@@ -1,0 +1,85 @@
+/* =========================================================
+   DALLAS DETAIL CO. — multi-page components (pages.css)
+   Loaded after styles.css + enhance.css on every page.
+   Premium SEO architecture: sub-page heroes, service-page
+   layout with sticky sidebar, process steps, related mesh.
+   ========================================================= */
+
+/* ---------- sub-page hero ---------- */
+.subhero { padding: 160px 0 64px; position: relative; border-bottom: 1px solid var(--line); }
+.subhero .wrap { position: relative; z-index: 2; }
+.breadcrumb { display: flex; gap: 8px; align-items: center; font-size: .82rem; color: var(--muted-2); margin-bottom: 18px; flex-wrap: wrap; }
+.breadcrumb a { color: var(--muted); } .breadcrumb a:hover { color: var(--accent); }
+.breadcrumb span { color: var(--muted-2); }
+.subhero h1 { font-size: clamp(2.4rem, 5vw, 4rem); max-width: 14ch; margin-bottom: 18px; }
+.subhero p.lead { font-size: 1.15rem; color: var(--muted); max-width: 60ch; margin-bottom: 28px; }
+.subhero .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.subhero-media { position: absolute; inset: 0; z-index: 1; overflow: hidden; opacity: .22; }
+.subhero-media img { width: 100%; height: 100%; object-fit: cover; mask-image: linear-gradient(90deg, transparent, #000 60%); }
+
+/* ---------- service-page two-column layout ---------- */
+.svc-layout { display: grid; grid-template-columns: 1fr 340px; gap: 56px; align-items: start; padding: 80px 0; }
+.svc-body > * + * { margin-top: 22px; }
+.svc-body h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin-top: 46px; }
+.svc-body h3 { font-size: 1.25rem; margin-top: 30px; }
+.svc-body p { color: var(--muted); font-size: 1.04rem; }
+.svc-body strong { color: var(--ink); }
+.svc-body ul { list-style: none; display: grid; gap: 12px; margin-top: 8px; }
+.svc-body ul li { display: flex; gap: 12px; color: var(--ink); font-size: 1.02rem; }
+.svc-body ul li svg { width: 20px; height: 20px; color: var(--good); flex: none; margin-top: 4px; }
+.svc-body img.inline { border-radius: var(--radius); border: 1px solid var(--line); margin-top: 26px; }
+
+/* sticky sidebar (quote card) */
+.svc-side { position: sticky; top: 96px; display: grid; gap: 18px; }
+.side-card { background: linear-gradient(180deg, var(--surface), var(--bg-2)); border: 1px solid var(--line-2); border-radius: var(--radius); padding: 26px; }
+.side-card h4 { font-size: 1.15rem; margin-bottom: 6px; }
+.side-card p { color: var(--muted); font-size: .92rem; margin-bottom: 16px; }
+.side-card .price-line { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; }
+.side-card .price-line b { font-family: "Bricolage Grotesque"; font-size: 2rem; }
+.side-card .price-line span { color: var(--muted); font-size: .82rem; }
+.side-card .btn { width: 100%; margin-bottom: 10px; }
+.side-card . list { list-style: none; display: grid; gap: 9px; margin-top: 6px; }
+.side-card .list li { display: flex; gap: 9px; font-size: .9rem; color: var(--muted); }
+.side-card .list li svg { width: 16px; height: 16px; color: var(--accent); flex: none; margin-top: 3px; }
+.side-rating { display: flex; align-items: center; gap: 10px; padding: 16px 26px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.02); }
+.side-rating .stars { color: var(--star); } .side-rating small { color: var(--muted); }
+
+/* ---------- process steps ---------- */
+.steps { display: grid; gap: 16px; margin-top: 24px; counter-reset: step; }
+.step { display: grid; grid-template-columns: 56px 1fr; gap: 18px; align-items: start; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.step .n { width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; background: rgba(77,163,255,.12); border: 1px solid var(--line-2); color: var(--accent); font-family: "Bricolage Grotesque"; font-size: 1.4rem; }
+.step h4 { font-size: 1.12rem; margin-bottom: 4px; }
+.step p { color: var(--muted); font-size: .96rem; }
+
+/* ---------- related mesh ---------- */
+.related { padding: 70px 0; border-top: 1px solid var(--line); background: var(--bg-2); }
+.related h2 { font-size: clamp(1.7rem,3vw,2.2rem); margin-bottom: 28px; }
+.rel-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.rel-card { display: block; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); transition: transform .25s var(--ease), border-color .25s; }
+.rel-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.rel-card h3 { font-size: 1.12rem; margin-bottom: 6px; }
+.rel-card p { color: var(--muted); font-size: .92rem; }
+.rel-card .go { color: var(--accent); font-weight: 700; font-size: .9rem; margin-top: 12px; display: inline-block; }
+.city-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.city-links a { padding: 9px 15px; border: 1px solid var(--line-2); border-radius: 999px; color: var(--muted); font-size: .86rem; font-weight: 600; transition: .2s; }
+.city-links a:hover { color: var(--ink); border-color: var(--accent); background: rgba(77,163,255,.08); }
+
+/* ---------- contact page ---------- */
+.contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; padding: 70px 0; align-items: start; }
+.contact-info .info-row { display: flex; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.contact-info .info-row svg { width: 22px; height: 22px; color: var(--accent); flex: none; }
+.contact-info .info-row b { display: block; }
+.contact-info .info-row span, .contact-info .info-row a { color: var(--muted); }
+.contact-info .info-row a:hover { color: var(--accent); }
+.map-embed { margin-top: 26px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); aspect-ratio: 16/9; background: linear-gradient(135deg,#10202f,#1a3550); display: grid; place-items: center; color: var(--muted); }
+
+/* nav active state */
+.nav-links a.active { color: var(--ink); }
+.nav-links a.active::after { content:""; display:block; height:2px; background: var(--accent); margin-top:4px; border-radius:2px; }
+
+@media (max-width: 900px) {
+  .svc-layout { grid-template-columns: 1fr; gap: 36px; }
+  .svc-side { position: static; }
+  .rel-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+}
