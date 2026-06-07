@@ -2,6 +2,17 @@
 (function () {
   "use strict";
 
+  /* ---- Microsoft Clarity (OUR account — spec-site behavior insight, all pages) ----
+     Paste our Clarity project ID below to activate site-wide. Dormant until then. */
+  var CLARITY_ID = "CLARITY_PROJECT_ID";
+  if (CLARITY_ID && CLARITY_ID.indexOf("CLARITY_") !== 0) {
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", CLARITY_ID);
+  }
+
   /* ---- sticky header ---- */
   const header = document.querySelector(".header");
   const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 24);
